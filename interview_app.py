@@ -5,7 +5,7 @@ import json
 # =========================
 # OpenAI client
 # =========================
-client = OpenAI(api_key="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")
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # =========================
 # Vragenlijst
@@ -146,5 +146,6 @@ Geef een duidelijke maar beknopte analyse.
     }
     with open("interview_result.json", "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+
 
     st.success("Resultaat opgeslagen in interview_result.json")
